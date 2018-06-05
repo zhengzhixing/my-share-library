@@ -1,3 +1,3 @@
-def call(src,workDir) {
-    echo "ni ${src} or hello ${workDir}"
+def call(String name = 'human') {
+    echo "Hello, ${name}."
 }
