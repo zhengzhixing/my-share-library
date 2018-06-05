@@ -1,3 +1,3 @@
 def call(src,workDir) {
-    sh "echo ni ${src} or hello ${workDir}"
+    echo "ni ${src} or hello ${workDir}"
 }
