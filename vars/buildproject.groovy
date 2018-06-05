@@ -1,5 +1,5 @@
-def call() {
+def call(string url = 'git@github.com:zhengzhixing/game-of-life.git') {
      checkout([$class: 'GitSCM',branches: [[name: '* / master']],
-     userRemoteConfigs: [[credentialsId: '4773d545-8a70-4245-bb89-d576be82414f', url: 'git@github.com:zhengzhixing/game-of-life.git']]])            
+               userRemoteConfigs: [[credentialsId: '4773d545-8a70-4245-bb89-d576be82414f', url: ${url}]]])            
  
 }
