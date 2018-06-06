@@ -1,6 +1,6 @@
 def call(Map git) {
     pipeline {
-         angent any
+         agent any
          stages {
               stage('Build'){
                    echo "正在构建"
