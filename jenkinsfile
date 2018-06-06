@@ -1,2 +1,2 @@
-library 'my-share-library'
+@Library('my-share-library') _
 buildmaven name: 'game-of'
