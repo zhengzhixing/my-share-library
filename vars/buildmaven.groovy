@@ -18,7 +18,7 @@ def call(Map config) {
               stage('Deploy'){
                    steps{
                        echo "正在发布"
-                       sh 'sh /root/tomcat-jdk.sh'
+                       sh 'sh /var/lib/jenkins/tomcat-jdk.sh'
                    }
               }
          }
