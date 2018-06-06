@@ -4,7 +4,7 @@ def call(Map git) {
          stages {
               stage('Build'){
                   steps{
-                       echo "正在构建"
+                       echo "正在构建1"
                        git url: "git@github.com:zhengzhixing/${git.name}-life.git"
                        sh "mvn install"
                   }
