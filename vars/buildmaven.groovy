@@ -1,11 +1,11 @@
-def call(Map git) {
+def call(Map config) {
     pipeline {
          agent any
          stages {
               stage('Build'){
                   steps{
                        echo "正在构建1"
-                       git url: "git@github.com:zhengzhixing/${git.name}-life.git"
+                       git url: "git@github.com:zhengzhixing/${config.name}-life.git"
                        sh "mvn install"
                   }
               }
