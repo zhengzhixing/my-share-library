@@ -3,17 +3,23 @@ def call(Map git) {
          agent any
          stages {
               stage('Build'){
-                   echo "正在构建"
-                   git url: "git@github.com:zhengzhixing/${git.name}-life.git"
-                   sh "mvn install"
+                  steps{
+                       echo "正在构建"
+                       git url: "git@github.com:zhengzhixing/${git.name}-life.git"
+                       sh "mvn install"
+                  }
               }
               stage('Test'){
-                   echo "正在测试"
-                   sh 'mvn test'
+                   steps {
+                       echo "正在测试"
+                       sh 'mvn test'
+                   }
               }
               stage('Deploy'){
-                   echo "正在发布"
-                   sh 'sh /root/tomcat-jdk.sh'
+                   steps{
+                       echo "正在发布"
+                       sh 'sh /root/tomcat-jdk.sh'
+                   }
               }
          }
     }
