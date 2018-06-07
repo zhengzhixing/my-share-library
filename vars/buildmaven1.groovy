@@ -1,8 +1,8 @@
-config = readYaml text: libraryResource('org/zzx/project.yml')
+def config = readYaml yaml: libraryResource('org/zzx/project.yml')
 def call(Map parameters = [:]) {
     environment {
-         project = parameters.project
-         git_url = config.projects."$project".git_url
+       def  project = parameters.project
+       def  git_url = config.projects."$project".git_url
     }
     pipeline {
         agent any
