@@ -6,12 +6,10 @@ def call(Map parameters = [:]) {
     }
 pipeline {
     agent any
-
         stages {
               stage('Build'){
                   steps{
                        echo "正在构建1"
-                      print "${git_url}"
                        git url: "${git_url}", branch: 'master'
                        sh "mvn install"
                   }
