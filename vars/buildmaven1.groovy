@@ -1,6 +1,4 @@
-environment {
-      def config = readYaml text: libraryResource('org/zzx/project.yml')
-}
+def config = readYaml text: libraryResource('org/zzx/project.yml')
 def call(Map parameters = [:]) {
     environment {
         def project = parameters.project
