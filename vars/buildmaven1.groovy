@@ -2,15 +2,15 @@ def call(Map parameters = [:]) {
     environment {
         def project = parameters.name
         def config = readYaml text: libraryResource('org/zzx/project.yml')
-        def git_project_url = config.projects."$project".git_url
+        def url = config.projects."$project".git_url
     }
 pipeline {
     agent any
     stages {
         stage('构建'){
              steps {
-                 print "${git_project_url}"
-                 git url: "${git_project_url}"
+                 print "${url}"
+                 git url: "${url}"
                  sh "mvn install"
              }
         }
