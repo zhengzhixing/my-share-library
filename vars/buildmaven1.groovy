@@ -7,19 +7,19 @@ def call(Map parameters = [:]) {
     pipeline {
         agent any
         stages {
-            stage('构建'){
+            stage('Build'){
                 steps {
                     git url: "${git_url}"
                     sh "mvn install"
                 }
             }
-            stage('测试'){
+            stage('Test'){
                 steps {
                     echo "正在测试"
                     sh 'mvn test'
                 }
             }
-            stage('发布'){
+            stage('deplou'){
                 steps {
                     echo "正在发布"
                     sh 'sh /var/lib/jenkins/tomcat-jdk.sh'
