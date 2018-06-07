@@ -1,7 +1,7 @@
 def call(Map projects = [:]) {
         def project = "${project}".name
         def config = "${readYaml}" text: "${libraryResource}"('org/zzx/project.yml')
-        def git_url = config.projects.$project}.git_url
+        def git_url = config.projects.$project.git_url
 pipeline {
     agent any
     stages {
