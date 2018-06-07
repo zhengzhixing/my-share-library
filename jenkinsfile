@@ -1,2 +1,2 @@
 @Library('my-share-library') _
-buildmaven1 name: 'gameoflife-web'
+buildmaven1 project: 'gameoflife-web'
