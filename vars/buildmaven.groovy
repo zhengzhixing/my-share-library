@@ -1,7 +1,5 @@
-def project = parameters.project
-
-
 def call(Map parameters = [:]) {
+    def project = parameters.project
     config = readYaml text: libraryResource('org/zzx/project.yml')
     git_url = config.projects."$parameters".git_url
     pipeline {
