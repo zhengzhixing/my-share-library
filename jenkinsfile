@@ -1,2 +1,2 @@
 @Library('my-share-library') _
-buildmaven name: 'gameoflife-web'
+buildmaven name: 'gameoflife-deploy'
