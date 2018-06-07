@@ -10,7 +10,7 @@ pipeline {
               stage('Build'){
                   steps{
                        echo "正在构建1"
-                       git url: "${git_url}", branch: 'master'
+                       git url: "${git_url}"
                        sh "mvn install"
                   }
               }
