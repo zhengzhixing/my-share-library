@@ -1,1 +1,10 @@
-11
+projects:
+  gameoflife-core:
+    git_url:
+        - "git@github.com:zhengzhixing/gameoflife-core.git"
+  gameoflife-deploy:
+    git_url:
+        - "git@github.com:zhengzhixing/gameoflife-deploy.git"
+  gameoflife-web:
+     git_url:
+        - "git@github.com:zhengzhixing/gameoflife-web.git"
