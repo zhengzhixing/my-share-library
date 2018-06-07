@@ -1,3 +1,4 @@
+def call(Map parameters = [:]) {
 pipeline {
     agent any
     environment { 
@@ -25,4 +26,5 @@ pipeline {
         }
     
     }
+}
 }
