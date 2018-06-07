@@ -5,6 +5,6 @@ projects:
   gameoflife-deploy:
     git_url:
         - "git@github.com:zhengzhixing/gameoflife-deploy.git"
-  gameoflife-web
+  gameoflife-web:
      git_url:
         - "git@github.com:zhengzhixing/gameoflife-web.git"
