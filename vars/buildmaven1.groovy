@@ -1,7 +1,7 @@
 def call(Map projects = [:]) {
     environment {
         def project = "${project}".name
-        def config = readYaml text: libraryResource('org/zzx/project.yml')
+        def config = "${readYaml}" text: "${libraryResource}"('org/zzx/project.yml')
         def git_url = config.projects."${project}".git_url
     }
 pipeline {
