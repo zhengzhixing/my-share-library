@@ -9,6 +9,8 @@ def call(Map parameters = [:]) {
         stages {
             stage('构建'){
                 steps {
+                    println "$project"
+                    println "$git_url"
                     git url: "$git_url"
                     sh "mvn install"
                 }
