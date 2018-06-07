@@ -1,3 +1,6 @@
+         def  project = parameters.project
+         def  config = readYaml yml: libraryResource('org/zzx/project.yml')
+         def  git = config.projects."$project".git_url 
 
 def call(Map parameters = [:]) {
     environment {
@@ -7,9 +10,6 @@ def call(Map parameters = [:]) {
     }
     pipeline {
         agent any
-          def  project = parameters.project
-         def  config = readYaml yml: libraryResource('org/zzx/project.yml')
-         def  git = config.projects."$project".git_url 
         stages {
             stage('Build'){
                 steps {
