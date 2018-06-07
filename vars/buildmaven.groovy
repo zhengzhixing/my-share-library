@@ -8,7 +8,7 @@ def call(Map parameters = [:]) {
               stage('Build'){
                   steps{
                        echo "正在构建1"
-                       git url: "git@github.com:zhengzhixing/${git_url}"
+                       git url: "${git_url}"
                        sh "mvn install"
                   }
               }
