@@ -9,7 +9,7 @@ def call(Map parameters = [:]) {
         stages {
             stage('Build'){
                 steps {
-                    git url: "git@github.com:zhengzhixing/${git_url}", branch: 'master'
+                    git url: "git@github.com:zhengzhixing${git_url}"
                     sh "mvn install"
                 }
             }
