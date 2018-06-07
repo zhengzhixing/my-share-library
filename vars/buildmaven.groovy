@@ -1,11 +1,14 @@
-def call(Map config) {
+def call(Map parameters = [:]) {
+    def project = parameters.project
+    def config = readYaml text: libraryResource('resources/org/zzx/project.yml')
+    def git_url = config.projects."$project".git_url
     pipeline {
          agent any
          stages {
               stage('Build'){
                   steps{
                        echo "正在构建1"
-                       git url: "git@github.com:zhengzhixing/${config.name}-life.git"
+                       git url: "git@github.com:zhengzhixing/${git_url}"
                        sh "mvn install"
                   }
               }
