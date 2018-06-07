@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('构建'){
              steps {
-                 git url: "${git_url}"
+                 git url: "$git_url"
                  sh "mvn install"
              }
         }
