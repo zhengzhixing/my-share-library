@@ -1,8 +1,4 @@
-         def  project = parameters.project
-         def  config = readYaml yml: libraryResource('org/zzx/project.yml')
-         def  git = config.projects."$project".git_url 
-
-def call(Map parameters = [:]) {
+def call(Map parameters) {
     environment {
          def  project = parameters.project
          def  config = readYaml yml: libraryResource('org/zzx/project.yml')
@@ -13,7 +9,7 @@ def call(Map parameters = [:]) {
         stages {
             stage('Build'){
                 steps {
-                       git url: "${git}", branch: 'master'
+                       git url: "${git_url}", branch: 'master'
                        sh "mvn install"
                 }
             }
