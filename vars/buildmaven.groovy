@@ -9,7 +9,7 @@ def call(Map parameters = [:]) {
                   steps{
                        echo "正在构建1"
                        git url: "${git_url}", branch: 'master'
-                       sh "mvn  clean install"
+                       sh "mvn install"
                   }
               }
               stage('Test'){
