@@ -1,7 +1,7 @@
 def call(Map parameters) {
     
          def  project = parameters.project
-         def  config = libraryResource('org/zzx/project.yml')
+         def  request = libraryResource 'org/zzx/project.yml'
          def  git_url = config.projects."$project".git_url 
     pipeline {
         agent any
