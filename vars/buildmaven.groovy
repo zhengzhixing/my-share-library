@@ -1,14 +1,14 @@
+def project = parameters.project
+def config = readYaml text: libraryResource('org/zzx/project.yml')
+def git_url = config.projects."$project".git_url
 def call(Map parameters = [:]) {
-          def project = parameters.project
-          def config = readYaml text: libraryResource('org/zzx/project.yml')
-          def git_url = config.projects."$project".git_url
     pipeline {
          agent any
          stages {
               stage('Build'){
                   steps{
                        echo "正在构建1"
-                       git url: "${git_url}"
+                       git url: "${git_url}", branch: 'master'
                        sh "mvn  clean install"
                   }
               }
