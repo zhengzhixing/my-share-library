@@ -5,9 +5,9 @@ def call(Map parameters = [:]) {
             stage('Build'){
                 steps {
                     script {
-                       def yaml = libraryResource 'org/zzx/project.yml'
-                       def git_url = yaml.projects.parameters.name.git_url
-                       git url: git_url
+                       yaml = libraryResource 'org/zzx/project.yml'
+                        git_url = "${yaml.projects.${parameters}.name.git_url}"
+                        git url: "${git_url}"
                        sh "mvn install"
                     }
                 }
