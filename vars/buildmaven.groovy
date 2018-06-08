@@ -1,6 +1,6 @@
-def call(Map parameters = 'gameoflife-web') {
                  config = readYaml text: libraryResource("org/zzx/project.yml")                
                  git_url = "$config".projects.gameoflife-web.git_url
+def call(Map parameters = 'gameoflife-web') {
 pipeline {
     agent any
         stages {
