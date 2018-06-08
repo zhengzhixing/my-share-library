@@ -1,13 +1,13 @@
 def call(Map parameters = [:]) {
-def request = libraryResource 'org/zzx/project.yml'
-
+    def request = libraryResource 'org/zzx/project.yml'
+    def git_url = request.projects."${parameters.name}".git
 pipeline {
     agent any
         stages {
               stage('Build'){
                   steps{
                        echo "正在构建1"
-                    git url: "git@github.com:zhengzhixing/${parameters.name}.git" 
+                       git url: "$git_url" 
                        sh "mvn install"
                   }
               }
