@@ -5,7 +5,7 @@ def call(Map parameters = [:]) {
             stage('Build'){
                 steps {
                     script {
-                       def yaml = readYaml file: 'org/zzx/project.yml'
+                       def yaml = libraryResource 'org/zzx/project.yml'
                        def project = parameters.name
                        def git_url = yaml.projects.project.git_url
                        git url: git_url
