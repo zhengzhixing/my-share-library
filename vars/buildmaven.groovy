@@ -1,13 +1,13 @@
-                 config = readYaml text: libraryResource("org/zzx/project.yml")                
-                 git_url = "$config".projects.gameoflife-web.git_url
 def call(Map parameters = 'gameoflife-web') {
+def request = libraryResource 'org/zzx/project.yml'
+
 pipeline {
     agent any
         stages {
               stage('Build'){
                   steps{
                        echo "正在构建1"
-                    git url: "git@github.com:zhengzhixing/${git_url}.git" 
+                    git url: "git@github.com:zhengzhixing/${parameters.name}.git" 
                        sh "mvn install"
                   }
               }
