@@ -1,2 +1,2 @@
-library 'my-share-library'
+@library ('my-share-library') import static org.zzx.project.*
 buildmaven1 project: 'gameoflife-web'
