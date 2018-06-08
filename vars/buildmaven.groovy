@@ -1,6 +1,6 @@
 def call(Map parameters = [:]) {
     def request = libraryResource 'org/zzx/project.yml'
-    def git_url = request.projects."${parameters.name}".git
+    def git_url = "${request}".projects."${parameters.name}".git
 pipeline {
     agent any
         stages {
