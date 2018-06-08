@@ -1,4 +1,4 @@
-def call(Map parameters = 'gameoflife-web') {
+def call(Map parameters = [:]) {
 def request = libraryResource 'org/zzx/project.yml'
 
 pipeline {
