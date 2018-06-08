@@ -1,5 +1,5 @@
 def call(Map parameters = 'gameoflife-web') {
-                def project = parameters
+                def project = "${parameters}"
                 def config = readYaml text: libraryResource("org/zzx/project.yml")                
                 def git_url = "$config".projects."$project".git_url
 pipeline {
