@@ -6,8 +6,7 @@ def call(Map parameters = [:]) {
                 steps {
                     script {
                        def yaml = libraryResource 'org/zzx/project.yml'
-                       def project = parameters.name
-                       def git_url = yaml.projects.project.git_url
+                       def git_url = yaml.projects.parameters.name.git_url
                        git url: git_url
                        sh "mvn install"
                     }
