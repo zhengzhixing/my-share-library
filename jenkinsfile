@@ -1,2 +1,2 @@
 library 'my-share-library'
-buildmaven1 project: 'gameoflife-web'
+buildmaven1()
