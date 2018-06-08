@@ -1,8 +1,5 @@
-#!/usr/bin/env groovy
-@Grad('resources/org/zzx')
-import resources/org/zzx/project.yml
 def call(Map parameters = [:]) {
-    def yaml = readYaml file: "project.yml"
+    def yaml = readYaml file: "org/zzx/project.yml"
     def git_url = yaml.projects."${parameters}".name.git_url
 pipeline {
     agent any
