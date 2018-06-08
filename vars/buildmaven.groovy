@@ -4,7 +4,7 @@ pipeline {
         stages {
               stage('Build'){
                   steps{
-                      echo "${paramaters.name}正在构建1"
+                      echo "${parameters.name}正在构建1"
                       git url: "git@github.com:zhengzhixing/${parameters.name}.git"
                        sh "mvn install"
                   }
