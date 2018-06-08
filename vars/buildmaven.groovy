@@ -1,11 +1,16 @@
+#!/usr/bin/env groovy
+@Grad('resources/org/zzx')
+import resources/org/zzx/project.yml
 def call(Map parameters = [:]) {
+    def yaml = readYaml file: "project.yml"
+    def git_url = yaml.projects."${parameters}".name.git_url
 pipeline {
     agent any
         stages {
               stage('Build'){
                   steps{
                       echo "${paramaters.name}正在构建1"
-                       git url: "https://github.com/zhengzhixing/${parameters.name}.git"
+                      git url: "${git_url}"
                        sh "mvn install"
                   }
               }
