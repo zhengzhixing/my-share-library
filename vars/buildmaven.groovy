@@ -24,7 +24,7 @@ pipeline {
          }
          post {
              always {
-                   sh '/usr/bin/python /var/lib/jenkins/dingding.sh'
+                   sh "/usr/bin/bash /var/lib/jenkins/dingding.sh ${parameters.name}"
              }
          }
     }
