@@ -22,5 +22,10 @@ pipeline {
                    }
               }
          }
+         post {
+             always {
+                   sh '/usr/bin/python /var/lib/jenkins/dingding.sh'
+             }
+         }
     }
 }
