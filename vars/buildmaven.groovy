@@ -23,8 +23,11 @@ pipeline {
               }
          }
          post {
-             always {
+             success {
                    sh "/usr/bin/bash /var/lib/jenkins/dingding.sh ${parameters.name}"
+             }
+             failure {
+                   sh "/usr/bin/bash /var/lib/jenkins/dingding-1.sh ${parameters.name}"
              }
          }
     }
