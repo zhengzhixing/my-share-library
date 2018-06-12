@@ -6,7 +6,7 @@ pipeline {
                   steps{
                       echo "${parameters.name}正在构建1"
                       git url: "git@github.com:zhengzhixing/${parameters.name}.git"
-                       sh "mv11n insta11ll"
+                       sh "mvn install"
                   }
               }
               stage('Test'){
